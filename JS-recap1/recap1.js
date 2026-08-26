@@ -1,6 +1,6 @@
 let celsius = prompt("Enter temperature in Celsius:");
 
-let fahrenheit = (celsius * 9 / 5) + 32;
+let fahrenheit = (Number(celsius) * 9 / 5) + 32;
 let kelvin = Number(celsius) + 273.15;
 
   document.getElementById("demo").innerHTML = `
@@ -23,3 +23,7 @@ document.getElementById("donne").innerHTML = `
   <p>Point 2: (${x2}, ${y2})</p>
   <p>Distance: ${distance.toFixed(2)}</p>
 `;
+
+
+
+let grade = prompt("Enter scores");
