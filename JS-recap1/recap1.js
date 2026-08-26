@@ -57,3 +57,9 @@ else {
 
 document.getElementById("deo").innerHTML = `
 your score is ${score} and your grade is ${grade}`;
+
+let number = prompt("enter a positive integer ");
+let sum;
+
+
+
