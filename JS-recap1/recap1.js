@@ -59,7 +59,7 @@ document.getElementById("deo").innerHTML = `
 your score is ${score} and your grade is ${grade}`;
 
 
-let number = number (prompt("Enter a positive number"));
+let number = prompt("Enter a positive number");
 let sum;
 
 for (let i = 1; i <= number; i++){
@@ -70,4 +70,14 @@ document.getElementById ("bora").innerHTML = `
 the sum of natural numbers up to ${number} is ${sum};
 `
 
+let limit = prompt("Enter a number");
+let result = "";
 
+for(let i = 1; i <= limit; i++) {
+  for (let j = 1; j <= limit; j++){
+    result += i * j + "";
+  }
+  result += "<p>";
+}
+
+document.getElementById("hero").innerHTML = result;
