@@ -58,8 +58,16 @@ else {
 document.getElementById("deo").innerHTML = `
 your score is ${score} and your grade is ${grade}`;
 
-let number = prompt("enter a positive integer ");
+
+let number = number (prompt("Enter a positive number"));
 let sum;
 
+for (let i = 1; i <= number; i++){
+  sum += i;
+}
+
+document.getElementById ("bora").innerHTML = `
+the sum of natural numbers up to ${number} is ${sum};
+`
 
 
