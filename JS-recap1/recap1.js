@@ -9,3 +9,8 @@ let kelvin = Number(celsius) + 273.15;
   <p>Kelvin: ${kelvin} K</p>
 `;
 
+
+let X1 = prompt("Enter X1");
+let X2 = prompt("Enter X2")
+let Y1 = prompt("Enter Y1");
+let Y2 = prompt("Enter Y2")
