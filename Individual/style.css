@@ -4,6 +4,8 @@ body {
   align-items: center;
   padding: 200px;
   margin: 0;
+  background-color: black;
+  
 }
 
 .buttons {
@@ -20,5 +22,7 @@ body {
   padding: 10px;
   border-radius: 20px;
   border: none;
+  color: white;
+  background-color: #404040;
   
 }
