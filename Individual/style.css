@@ -2,27 +2,96 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 200px;
+  min-height: 100vh;
   margin: 0;
   background-color: black;
-  
+  font-family: Arial, sans-serif;
 }
 
-.buttons {
+.donne {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 450px;
+}
+
+h1 {
+  color: white;
+  margin: 0;
+  font-size: 26px;
+  text-align: center;
+}
+
+p {
+  color: #ccc;
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.tab-switcher {
+  display: flex;
+  flex-direction: row;
   gap: 12px;
-  width: 400px;
-  
+  width: 100%;
 }
 
 .login, .signup {
-  width: 100%;
+  flex: 1;
   padding: 10px;
   border-radius: 20px;
   border: none;
   color: white;
   background-color: #404040;
-  
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.jay {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.email, .password {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+}
+
+.email:focus, .password:focus {
+  border-color: #fbbd5c;
+}
+
+.login-1 {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  color: #1e1e1e;
+  background-color: #fbbd5c;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-1:hover {
+  background-color: #f5b041;
 }
