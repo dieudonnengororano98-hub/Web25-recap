@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual Assignment </title>
+    <title>Individual Assignment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
 <div class="donne">
     <h1>Student kampus</h1>
     <p>Student sushi restaurants & their menus in Finland</p>
 
     <div class="tab-switcher">
-        <button class="login">Log in</button>
-        <button class="signup">Sig nup</button>
-
+        <button class="login active" id="login-tab">Log in</button>
+        <button class="signup" id="signup-tab">Sign up</button>
     </div>
 
     <div class="jay">
+        <input type="text" class="first-name hide" placeholder="First Name">
+        <input type="text" class="last-name hide" placeholder="Last Name">
         <input type="email" class="email" placeholder="Email">
         <input type="password" class="password" placeholder="Password">
-        <button class="login-1">Log in</button>
+        
+        <button type="submit" class="login-1">Log in</button>
+        <button type="submit" class="signup-1 hide">Create Account</button>
     </div>
 </div>
-    
- 
-</html>
 
+<script src="script.js"></script>
+</body>
+</html>
