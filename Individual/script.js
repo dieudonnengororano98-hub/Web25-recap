@@ -26,3 +26,18 @@ loginTab.addEventListener('click', function() {
     loginBtn.classList.remove('hide');
 });
 
+loginBtn.addEventListener('click', function() {
+    window.location.href = "main.html";
+});
+
+signupBtn.addEventListener('click', function() {
+    window.location.href = "main.html";
+});
+
+const logout = document.getElementById("logout");
+
+logout.addEventListener("click", function() {
+    window.location.href = "index.html";
+});
+
+
