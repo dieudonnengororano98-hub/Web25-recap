@@ -25,3 +25,4 @@ loginTab.addEventListener('click', function() {
     signupBtn.classList.add('hide');
     loginBtn.classList.remove('hide');
 });
+
