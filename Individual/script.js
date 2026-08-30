@@ -34,9 +34,4 @@ signupBtn.addEventListener('click', function() {
     window.location.href = "main.html";
 });
 
-const logout = document.getElementById("logout");
-
-logout.addEventListener("click", function() {
-    window.location.href = "index.html";
-});
 
