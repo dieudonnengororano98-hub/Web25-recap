@@ -1,4 +1,5 @@
-// array for todo list
+'use strict';
+
 const todoList = [
   {
     id: 1,
@@ -27,23 +28,20 @@ const todoList = [
   },
 ];
 
-// add your code here
-
-
-
-
-
-
 const ul = document.querySelector('ul');
 const dialog = document.querySelector('dialog');
-const input = document.querySelector('input');
+const form = document.querySelector('form');
+const input = document.querySelector('dialog input');
+const addBtn = document.querySelector('.add-btn');
 
 function renderTodoList() {
   ul.textContent = '';
+
   todoList.forEach((todo) => {
     const li = document.createElement('li');
     const label = document.createElement('label');
     const checkbox = document.createElement('input');
+    const deleteBtn = document.createElement('button');
 
     checkbox.type = 'checkbox';
     checkbox.checked = todo.completed;
@@ -52,24 +50,38 @@ function renderTodoList() {
       console.log('Updated todoList:', todoList);
     };
 
-    label.append(checkbox, ` ${todo.task}`);
-    li.appendChild(label);
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.onclick = () => {
+      const index = todoList.findIndex((item) => item.id === todo.id);
+      if (index !== -1) {
+        todoList.splice(index, 1);
+        ul.removeChild(li);
+        console.log('Updated todoList:', todoList);
+      }
+    };
+
+    label.append(checkbox, ` ${todo.task} `);
+    li.append(label, deleteBtn);
     ul.appendChild(li);
   });
 }
 
-document.querySelector('.add-btn').onclick = () => dialog.showModal();
+if (addBtn) {
+  addBtn.onclick = () => dialog.showModal();
+}
 
-document.querySelector('form').onsubmit = (e) => {
-  e.preventDefault();
-  if (!input.value.trim()) return;
+if (form) {
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    if (!input.value.trim()) return;
 
-  todoList.push({ id: Date.now(), task: input.value.trim(), completed: false });
-  console.log('Updated todoList:', todoList);
+    todoList.push({ id: Date.now(), task: input.value.trim(), completed: false });
+    console.log('Updated todoList:', todoList);
 
-  renderTodoList();
-  input.value = '';
-  dialog.close();
-};
+    renderTodoList();
+    input.value = '';
+    dialog.close();
+  };
+}
 
 renderTodoList();
