@@ -771,3 +771,34 @@ const restaurants = [
 ];
 
 // your code here
+
+
+'use strict';
+
+const map = L.map('map').setView([60.1699, 24.9384], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors',
+}).addTo(map);
+
+restaurants.forEach((restaurant) => {
+  const [lng, lat] = restaurant.location.coordinates;
+
+  const popupContent = document.createElement('div');
+
+  const h3 = document.createElement('h3');
+  h3.textContent = restaurant.name;
+
+  const p = document.createElement('p');
+  p.textContent = restaurant.address;
+
+  popupContent.appendChild(h3);
+  popupContent.appendChild(p);
+
+  L.marker([lat, lng])
+    .addTo(map)
+    .bindPopup(popupContent);
+});
+
+
