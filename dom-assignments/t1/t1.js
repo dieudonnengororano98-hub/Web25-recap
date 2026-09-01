@@ -27,9 +27,6 @@ const todoList = [
   },
 ];
 
-// add your code here
-
-
 
 const ulElement = document.querySelector('ul');
 
@@ -45,10 +42,7 @@ todoList.forEach((todo) => {
 
   ulElement.insertAdjacentHTML('beforeend', html);
 });
-// add your code here
 
-
-// add your code here
 
 
 
