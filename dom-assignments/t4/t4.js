@@ -771,3 +771,57 @@ const restaurants = [
 ];
 
 // your code here
+
+
+
+
+'use strict';
+
+const targetElement = document.querySelector('#target');
+
+function calculateDistance(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
+
+function success(position) {
+  const userLat = position.coords.latitude;
+  const userLng = position.coords.longitude;
+
+  restaurants.forEach((restaurant) => {
+    const [restLng, restLat] = restaurant.location.coordinates;
+    restaurant.distance = calculateDistance(userLat, userLng, restLat, restLng);
+  });
+
+  restaurants.sort((a, b) => {
+    if (a.distance < b.distance) {
+      return -1;
+    }
+    if (a.distance > b.distance) {
+      return 1;
+    }
+    return 0;
+  });
+
+  targetElement.textContent = '';
+
+  restaurants.forEach((restaurant) => {
+    const li = document.createElement('li');
+
+    const h3 = document.createElement('h3');
+    h3.textContent = restaurant.name;
+
+    const pAddress = document.createElement('p');
+    pAddress.textContent = restaurant.address;
+
+    li.appendChild(h3);
+    li.appendChild(pAddress);
+
+    targetElement.appendChild(li);
+  });
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error);
