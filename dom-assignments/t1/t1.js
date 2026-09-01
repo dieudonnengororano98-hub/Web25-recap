@@ -1,4 +1,7 @@
 // array for todo list
+// array for todo list
+
+
 const todoList = [
   {
     id: 1,
