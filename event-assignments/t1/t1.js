@@ -35,7 +35,8 @@ const input = document.querySelector('dialog input');
 const addBtn = document.querySelector('.add-btn');
 
 function renderTodoList() {
-  ul.textContent = '';
+  if (!ul) return;
+  ul.innerHTML = '';
 
   todoList.forEach((todo) => {
     const li = document.createElement('li');
@@ -45,20 +46,20 @@ function renderTodoList() {
 
     checkbox.type = 'checkbox';
     checkbox.checked = todo.completed;
-    checkbox.onchange = () => {
+    checkbox.addEventListener('change', () => {
       todo.completed = checkbox.checked;
       console.log('Updated todoList:', todoList);
-    };
+    });
 
     deleteBtn.textContent = 'Delete';
-    deleteBtn.onclick = () => {
+    deleteBtn.addEventListener('click', () => {
       const index = todoList.findIndex((item) => item.id === todo.id);
       if (index !== -1) {
         todoList.splice(index, 1);
-        ul.removeChild(li);
+        renderTodoList();
         console.log('Updated todoList:', todoList);
       }
-    };
+    });
 
     label.append(checkbox, ` ${todo.task} `);
     li.append(label, deleteBtn);
@@ -66,22 +67,32 @@ function renderTodoList() {
   });
 }
 
-if (addBtn) {
-  addBtn.onclick = () => dialog.showModal();
+if (addBtn && dialog) {
+  addBtn.addEventListener('click', () => {
+    dialog.showModal();
+  });
 }
 
 if (form) {
-  form.onsubmit = (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!input.value.trim()) return;
+    if (!input) return;
 
-    todoList.push({ id: Date.now(), task: input.value.trim(), completed: false });
+    const taskName = input.value.trim();
+    if (!taskName) return;
+
+    todoList.push({
+      id: Date.now(),
+      task: taskName,
+      completed: false,
+    });
+
     console.log('Updated todoList:', todoList);
 
     renderTodoList();
     input.value = '';
     dialog.close();
-  };
+  });
 }
 
 renderTodoList();

@@ -771,3 +771,57 @@ const restaurants = [
 ];
 
 // your code here
+
+
+
+
+
+
+
+
+
+const target = document.querySelector('table');
+
+const modal = document.createElement('dialog');
+document.body.appendChild(modal);
+
+restaurants.sort((a, b) => a.name.localeCompare(b.name, 'fi'));
+
+restaurants.forEach((restaurant) => {
+  const row = document.createElement('tr');
+
+  const nameCell = document.createElement('td');
+  nameCell.textContent = restaurant.name;
+
+  const addressCell = document.createElement('td');
+  addressCell.textContent = restaurant.address;
+
+  row.appendChild(nameCell);
+  row.appendChild(addressCell);
+
+  row.addEventListener('click', () => {
+    document.querySelectorAll('.highlight').forEach((item) => {
+      item.classList.remove('highlight');
+    });
+
+    row.classList.add('highlight');
+
+    modal.innerHTML = `
+      <h2>${restaurant.name}</h2>
+      <p><strong>Company:</strong> ${restaurant.company}</p>
+      <p><strong>Address:</strong> ${restaurant.address}</p>
+      <p><strong>Postal Code:</strong> ${restaurant.postalCode}</p>
+      <p><strong>City:</strong> ${restaurant.city}</p>
+      <p><strong>Phone:</strong> ${restaurant.phone || '-'}</p>
+      <button class="close-btn">Close</button>
+    `;
+
+    modal.querySelector('.close-btn').addEventListener('click', () => {
+      modal.close();
+    });
+
+    modal.showModal();
+  });
+
+  target.appendChild(row);
+});
