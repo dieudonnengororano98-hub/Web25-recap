@@ -52,6 +52,14 @@ h4{
   cursor: pointer;
   margin-right: 50px;
 }
+.edit-profile{
+  width: 100px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: #2a2a2a;
+  cursor: pointer;
+}
 
 
 .hero-header {
@@ -287,4 +295,8 @@ h1 {
   height: 100%;
   border: none;
   border-radius: 16px;
+}
+.edit-profile{
+  width: 80px;
+  padding: 5px;
 }

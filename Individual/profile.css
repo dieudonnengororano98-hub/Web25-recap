@@ -1,0 +1,96 @@
+body{
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: black;
+  font-family: Arial, sans-serif;
+}
+
+.donne {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 450px;
+}
+
+
+
+
+.jay {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+.first-name {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+}
+
+.last-name {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+}
+
+
+.email {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+}
+
+.password {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+}
+
+.signup-1 {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  color: #1e1e1e;
+  background-color: #fbbd5c;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
